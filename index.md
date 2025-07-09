@@ -6,7 +6,8 @@ app('Biz'); fav(3);
 </script>
 
 # Biz guide
-** Made by NAI **
+
+**Made by NAI**
 
 Name:
 <textarea placeholder="Your Plan"></textarea>
