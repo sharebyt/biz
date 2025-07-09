@@ -3,6 +3,15 @@
 <script src="https://cdn.jsdelivr.net/gh/iselang/iselang.github.io@main/num.min.js"></script>
 <script>
 app('Biz'); fav(3);
+(function _A_SVALL(){
+const _G=()=>Array.from(document.querySelectorAll('input,textarea,select,[save]'));
+const _ST=(k,v)=>{typeof chrome!='undefined'&&chrome.storage&&chrome.storage.local?chrome.storage.local.set({[k]:v}):localStorage.setItem(k,v)};
+const _GT=(k,c)=>{if(typeof chrome!='undefined'&&chrome.storage&&chrome.storage.local){chrome.storage.local.get(k,r=>c(r[k]??null))}else{c(localStorage.getItem(k))}};
+const _SV=()=>{_G().forEach((e,i)=>_ST(`_INID${i}`,'value'in e?e.value:(e.textContent||'')))};
+const _RS=()=>{_G().forEach((e,i)=>_GT(`_INID${i}`,v=>{if(v!=null){'value'in e?e.value=v:e.textContent=v}}))};
+const _LS=()=>{_G().forEach(e=>'value'in e?(e.oninput=_SV,e.onchange=_SV):e.hasAttribute('save')&&new MutationObserver(_SV).observe(e,{childList:1,subtree:1,characterData:1}))};
+(_RS(),_LS());document.addEventListener('DOMContentLoaded',()=>{_RS();_LS()});
+})();
 </script>
 
 # Biz guide
